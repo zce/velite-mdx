@@ -34,6 +34,6 @@
     "tailwindcss": "latest",
     "typescript": "latest",
     "unist-util-inspect": "latest",
-    "velite": "file:../velite"
+    "velite": "latest"
   }
 }
