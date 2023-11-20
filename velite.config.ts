@@ -1,7 +1,5 @@
 import { defineConfig, s } from 'velite'
 
-import { mdx } from './mdx'
-
 const slugify = (input: string) =>
   input
     .toLowerCase()
@@ -36,7 +34,7 @@ export default defineConfig({
         title: s.string().max(99),
         slug: s.slug(),
         description: s.string(),
-        code: mdx()
+        code: s.mdx()
       })
     },
     posts: {
@@ -47,7 +45,7 @@ export default defineConfig({
         slug: s.slug(),
         description: s.string(),
         date: s.isodate(),
-        code: mdx()
+        code: s.mdx()
       })
     }
   }

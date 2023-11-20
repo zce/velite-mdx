@@ -33,6 +33,7 @@
     "remark-gfm": "latest",
     "tailwindcss": "latest",
     "typescript": "latest",
-    "velite": "latest"
+    "unist-util-inspect": "latest",
+    "velite": "file:../velite"
   }
 }

@@ -1,6 +1,5 @@
 import * as runtime from 'react/jsx-runtime'
 import Image from 'next/image'
-import { run, runSync } from '@mdx-js/mdx'
 
 const components = {
   Image
@@ -9,7 +8,10 @@ const components = {
 interface MdxProps {
   code: string
 }
-
+function runSync(code: string, options: any) {
+  // eslint-disable-next-line no-new-func
+  return new Function(String(code))(options)
+}
 const useMDXComponent = (code: string) => {
   const { default: Component } = runSync(code, { ...runtime } as any)
   return Component
@@ -17,6 +19,5 @@ const useMDXComponent = (code: string) => {
 
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code)
-
   return <Component components={components} />
 }
