@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 
-import { Mdx } from '@/components/mdx-components'
+import { MDXContent } from '@/components/mdx-content'
 import * as db from '#site/content'
 
 import type { Metadata } from 'next'
@@ -48,7 +48,7 @@ export default async function PagePage({ params }: PageProps) {
       <h1>{page.title}</h1>
       {page.description && <p className="text-xl">{page.description}</p>}
       <hr />
-      <Mdx code={page.code} />
+      <MDXContent code={page.code} />
     </article>
   )
 }
